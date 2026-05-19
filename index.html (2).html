@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRI VEL'S REAL ESTATE | வேலூர் சொத்துக்கள்</title>
+    <meta name="description" content="SRI VEL'S REAL ESTATE - Adukkamparai, Vellore. வீடுகள், ப்ளோட்டுகள், அடுக்குமாடி வீடுகள்">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --gold: #C9A84C;
+            --gold-light: #E8C96A;
+            --gold-dark: #9A7B35;
+            --deep: #0D1117;
+            --deep2: #161B22;
+            --deep3: #1E2530;
+            --text: #E8E8E8;
+            --text-muted: #8B95A3;
+            --red: #E63946;
+            --white: #FFFFFF;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--deep);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        /* ─── SCROLLBAR ─── */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: var(--deep); }
+        ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+
+        /* ─── HEADER ─── */
+        header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 999;
+            background: rgba(13,17,23,0.92);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(201,168,76,0.15);
+            padding: 1rem 0;
+            transition: all 0.3s;
+        }
+
+        .container { width: 92%; max-width: 1200px; margin: 0 auto; }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: var(--gold);
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .logo span {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 300;
+            display: block;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--gold); }
+
+        .nav-cta {
+            background: var(--gold);
+            color: var(--deep) !important;
+            padding: 0.5rem 1.4rem;
+            border-radius: 4px;
+            font-weight: 600 !important;
+        }
+
+        .nav-cta:hover { background: var(--gold-light) !important; color: var(--deep) !important; }
+
+        /* ─── HERO ─── */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: 
+                linear-gradient(135deg, rgba(13,17,23,0.95) 0%, rgba(13,17,23,0.7) 50%, rgba(13,17,23,0.9) 100%),
+                url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&w=1600') center/cover no-repeat;
+        }
+
+        .hero-noise {
+            position: absolute;
+            inset: 0;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            animation: fadeUp 1s ease both;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(201,168,76,0.12);
+            border: 1px solid rgba(201,168,76,0.3);
+            color: var(--gold);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            animation: fadeUp 1s ease 0.1s both;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            animation: fadeUp 1s ease 0.2s both;
+        }
+
+        .hero h1 em {
+            font-style: normal;
+            color: var(--gold);
+        }
+
+        .hero-sub {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+            animation: fadeUp 1s ease 0.3s both;
+        }
+
+        .hero-location {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--gold-light);
+            font-size: 0.9rem;
+            margin-bottom: 2.5rem;
+            animation: fadeUp 1s ease 0.35s both;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            animation: fadeUp 1s ease 0.4s both;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--deep);
+            padding: 0.9rem 2rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            letter-spacing: 0.3px;
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(201,168,76,0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.25);
+            color: var(--white);
+            padding: 0.9rem 2rem;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        .hero-stats {
+            position: absolute;
+            bottom: 3rem;
+            right: 0;
+            display: flex;
+            gap: 3rem;
+            z-index: 2;
+            animation: fadeUp 1s ease 0.5s both;
+        }
+
+        .hero-stat {
+            text-align: center;
+            border-left: 1px solid rgba(201,168,76,0.2);
+            padding-left: 2rem;
+        }
+
+        .hero-stat:first-child { border-left: none; padding-left: 0; }
+
+        .hero-stat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--gold);
+            line-height: 1;
+        }
+
+        .hero-stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.3rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* ─── SECTION TITLE ─── */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-eyebrow {
+            display: inline-block;
+            color: var(--gold);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .section-divider {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+            margin: 1rem auto 0;
+        }
+
+        /* ─── SERVICES ─── */
+        .services {
+            padding: 6rem 0;
+            background: var(--deep2);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--deep3);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px;
+            padding: 2rem 1.5rem;
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover::before { transform: scaleX(1); }
+        .service-card:hover { border-color: rgba(201,168,76,0.2); transform: translateY(-4px); }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* ─── PROPERTIES ─── */
+        .properties {
+            padding: 6rem 0;
+            background: var(--deep);
+        }
+
+        .property-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+        }
+
+        .property-card {
+            background: var(--deep2);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 14px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .property-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            border-color: rgba(201,168,76,0.2);
+        }
+
+        .property-image {
+            height: 220px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .property-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .property-card:hover .property-image img { transform: scale(1.05); }
+
+        .property-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(13,17,23,0.6) 0%, transparent 50%);
+        }
+
+        .property-badge {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: var(--gold);
+            color: var(--deep);
+            padding: 0.35rem 0.9rem;
+            border-radius: 50px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            z-index: 1;
+            letter-spacing: 0.3px;
+        }
+
+        .property-info { padding: 1.5rem; }
+
+        .property-type {
+            color: var(--gold);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .property-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--white);
+            margin-bottom: 0.75rem;
+        }
+
+        .property-price {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .property-location {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .property-features {
+            display: flex;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.07);
+        }
+
+        .property-features span {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+
+        .property-cta {
+            display: block;
+            margin-top: 1.2rem;
+            text-align: center;
+            background: rgba(201,168,76,0.1);
+            border: 1px solid rgba(201,168,76,0.3);
+            color: var(--gold);
+            padding: 0.65rem;
+            border-radius: 6px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .property-cta:hover {
+            background: var(--gold);
+            color: var(--deep);
+        }
+
+        /* ─── ABOUT ─── */
+        .about {
+            padding: 6rem 0;
+            background: var(--deep2);
+        }
+
+        .about-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .about-text strong { color: var(--gold); }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-box {
+            background: var(--deep3);
+            border: 1px solid rgba(201,168,76,0.15);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .stat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--gold);
+            line-height: 1;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 0.4rem;
+        }
+
+        .about-visual {
+            position: relative;
+        }
+
+        .about-img-wrap {
+            border-radius: 14px;
+            overflow: hidden;
+            height: 450px;
+            position: relative;
+        }
+
+        .about-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-img-wrap::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(201,168,76,0.15) 0%, transparent 60%);
+            z-index: 1;
+        }
+
+        .about-card {
+            position: absolute;
+            bottom: -1.5rem;
+            left: -1.5rem;
+            background: var(--deep3);
+            border: 1px solid rgba(201,168,76,0.2);
+            border-radius: 10px;
+            padding: 1.2rem 1.5rem;
+            z-index: 2;
+        }
+
+        .about-card-title {
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .about-card-sub {
+            color: var(--text-muted);
+            font-size: 0.82rem;
+        }
+
+        /* ─── CONTACT ─── */
+        .contact {
+            padding: 6rem 0;
+            background: var(--deep);
+        }
+
+        .contact-inner {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-info-block h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-detail {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+            align-items: flex-start;
+        }
+
+        .contact-detail-icon {
+            font-size: 1.3rem;
+            width: 40px;
+            height: 40px;
+            background: rgba(201,168,76,0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-detail-text {
+            font-size: 0.95rem;
+        }
+
+        .contact-detail-label {
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-detail-value {
+            color: var(--white);
+            font-weight: 500;
+        }
+
+        .whatsapp-btns {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-top: 2rem;
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+            padding: 0.85rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .btn-whatsapp:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37,211,102,0.3);
+        }
+
+        /* ─── FORM ─── */
+        .contact-form {
+            background: var(--deep2);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 14px;
+            padding: 2.5rem;
+        }
+
+        .contact-form h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group { margin-bottom: 1.2rem; }
+
+        .form-group label {
+            display: block;
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            background: var(--deep3);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 8px;
+            color: var(--white);
+            font-size: 0.95rem;
+            font-family: 'DM Sans', sans-serif;
+            transition: border-color 0.3s;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--gold);
+        }
+
+        .form-group select option { background: var(--deep2); }
+
+        .form-group textarea { resize: vertical; min-height: 110px; }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: var(--gold);
+            color: var(--deep);
+            border: none;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 700;
+            font-family: 'DM Sans', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 0.5rem;
+        }
+
+        .btn-submit:hover {
+            background: var(--gold-light);
+            box-shadow: 0 8px 25px rgba(201,168,76,0.3);
+        }
+
+        /* ─── MAP ─── */
+        .map-section {
+            padding: 0 0 4rem;
+            background: var(--deep);
+        }
+
+        .map-wrap {
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid rgba(201,168,76,0.15);
+        }
+
+        .map-wrap iframe {
+            width: 100%;
+            height: 380px;
+            border: none;
+            display: block;
+        }
+
+        /* ─── FOOTER ─── */
+        footer {
+            background: var(--deep2);
+            border-top: 1px solid rgba(201,168,76,0.1);
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-inner {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-brand .logo { margin-bottom: 1rem; }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .footer-col h4 {
+            color: var(--gold);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .footer-col ul { list-style: none; }
+
+        .footer-col ul li {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover { color: var(--gold); }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding-top: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-muted);
+            font-size: 0.82rem;
+        }
+
+        /* ─── MOBILE NAV ─── */
+        .menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--gold);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 900px) {
+            .about-inner,
+            .contact-inner { grid-template-columns: 1fr; }
+            .about-visual { display: none; }
+            .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+            .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+            .hero-stats { position: relative; bottom: auto; right: auto; margin-top: 3rem; justify-content: flex-start; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .menu-btn { display: block; }
+            .property-grid { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: 1fr 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero-stats { flex-wrap: wrap; gap: 1.5rem; }
+            .hero-stat { border-left: none; padding-left: 0; }
+            .contact-form { padding: 1.5rem; }
+        }
+
+        @media (max-width: 480px) {
+            .services-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ─── ANIMATIONS ─── */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ═══ HEADER ═══ -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <span style="font-size:1.6rem">🏢</span>
+                    <div>
+                        SRI VEL'S REAL ESTATE
+                        <span>Vellore · Est. 2010</span>
+                    </div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">முகப்பு</a></li>
+                    <li><a href="#services">சேவைகள்</a></li>
+                    <li><a href="#properties">சொத்துக்கள்</a></li>
+                    <li><a href="#about">எங்களை பற்றி</a></li>
+                    <li><a href="#contact" class="nav-cta">தொடர்பு</a></li>
+                </ul>
+                <button class="menu-btn" onclick="toggleMenu()">☰</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-noise"></div>
+        <div class="container" style="position:relative;z-index:2;width:100%">
+            <div class="hero-content">
+                <div class="hero-badge">✦ வேலூரில் நம்பிக்கையான ரியல் எஸ்டேட்</div>
+                <h1>உங்கள் கனவு வீட்டை<br><em>இப்போதே கண்டறியுங்கள்</em></h1>
+                <p class="hero-sub">நேர்மை, தெளிவு, சிறப்பான சேவை — 500+ குடும்பங்களின் நம்பிக்கை</p>
+                <div class="hero-location">
+                    📍 Arni Main Road, Adukkamparai, Vellore — 15+ ஆண்டுகள் அனுபவம்
+                </div>
+                <div class="hero-actions">
+                    <a href="#properties" class="btn-primary">சொத்துக்களைப் பார்க்க →</a>
+                    <a href="https://wa.me/918295576895?text=Hi%2C%20I%20want%20property%20information" target="_blank" class="btn-outline">💬 WhatsApp</a>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-num">15+</div>
+                    <div class="hero-stat-label">ஆண்டுகள் அனுபவம்</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num">500+</div>
+                    <div class="hero-stat-label">வெற்றிகரமான விற்பனைகள்</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num">98%</div>
+                    <div class="hero-stat-label">வாடிக்கையாளர் திருப்தி</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ SERVICES ═══ -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-eyebrow">✦ எங்கள் சேவைகள்</span>
+                <h2 class="section-title">என்ன வேண்டும் உங்களுக்கு?</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <span class="service-icon">🏠</span>
+                    <h3>வீடு விற்பனை</h3>
+                    <p>3 BHK, 2 BHK, தனி வீடுகள் — சரியான விலையில்</p>
+                </div>
+                <div class="service-card fade-in">
+                    <span class="service-icon">📍</span>
+                    <h3>நிலம் / ப்ளோட்</h3>
+                    <p>DTCP அனுமதி பெற்ற ப்ளோட்டுகள் — வேலூர் மாவட்டம்</p>
+                </div>
+                <div class="service-card fade-in">
+                    <span class="service-icon">🏢</span>
+                    <h3>அடுக்குமாடி வீடுகள்</h3>
+                    <p>அனைத்து வசதிகளும் உள்ள நவீன அடுக்குமாடி வீடுகள்</p>
+                </div>
+                <div class="service-card fade-in">
+                    <span class="service-icon">💼</span>
+                    <h3>வணிகச் சொத்து</h3>
+                    <p>Shops, Offices, Commercial spaces — Main Road</p>
+                </div>
+                <div class="service-card fade-in">
+                    <span class="service-icon">🤝</span>
+                    <h3>சொத்து ஆலோசனை</h3>
+                    <p>விலை மதிப்பீடு, ஆவண ஆய்வு, பதிவு உதவி</p>
+                </div>
+                <div class="service-card fade-in">
+                    <span class="service-icon">🏗️</span>
+                    <h3>கட்டுமான சேவை</h3>
+                    <p>வீடு கட்டுதல், மறுசீரமைப்பு, Interior design</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ PROPERTIES ═══ -->
+    <section class="properties" id="properties">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-eyebrow">✦ சிறந்த சொத்துக்கள்</span>
+                <h2 class="section-title">இப்போது கிடைக்கும் சொத்துக்கள்</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="property-grid">
+
+                <div class="property-card fade-in">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1600596542815-6ad4c728fd27?ixlib=rb-4.0.3&w=600" alt="3 BHK வீடு">
+                        <span class="property-badge">புதியது</span>
+                    </div>
+                    <div class="property-info">
+                        <div class="property-type">வீடு • 3 BHK</div>
+                        <h3 class="property-title">நவீன அடுக்குமாடி வீடு</h3>
+                        <p class="property-price">₹1.35 கோடி</p>
+                        <p class="property-location">📍 Adukkamparai, Arni Road, Vellore</p>
+                        <div class="property-features">
+                            <span>🛏️ 3 படுக்கைகள்</span>
+                            <span>🚿 3 Bath</span>
+                            <span>📐 1650 sq.ft</span>
+                        </div>
+                        <a href="https://wa.me/918295576895?text=3 BHK வீடு பற்றி தகவல் வேண்டும்" target="_blank" class="property-cta">💬 WhatsApp விசாரிக்க</a>
+                    </div>
+                </div>
+
+                <div class="property-card fade-in">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&w=600" alt="2 BHK வீடு">
+                        <span class="property-badge">விரைவில்</span>
+                    </div>
+                    <div class="property-info">
+                        <div class="property-type">அடுக்குமாடி • 2 BHK</div>
+                        <h3 class="property-title">சிறந்த அடுக்குமாடி வீடு</h3>
+                        <p class="property-price">₹82 லட்சம்</p>
+                        <p class="property-location">📍 Govt Medical College அருகில், Vellore</p>
+                        <div class="property-features">
+                            <span>🛏️ 2 படுக்கைகள்</span>
+                            <span>🚿 2 Bath</span>
+                            <span>📐 1180 sq.ft</span>
+                        </div>
+                        <a href="https://wa.me/918295576895?text=2 BHK அடுக்குமாடி பற்றி தகவல் வேண்டும்" target="_blank" class="property-cta">💬 WhatsApp விசாரிக்க</a>
+                    </div>
+                </div>
+
+                <div class="property-card fade-in">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&w=600" alt="Plot">
+                        <span class="property-badge">DTCP அனுமதி</span>
+                    </div>
+                    <div class="property-info">
+                        <div class="property-type">நிலம் • Plot</div>
+                        <h3 class="property-title">DTCP அனுமதி ப்ளோட்</h3>
+                        <p class="property-price">₹45 லட்சம்</p>
+                        <p class="property-location">📍 Arni Main Road, Adukkamparai</p>
+                        <div class="property-features">
+                            <span>📐 1200 sq.ft</span>
+                            <span>✅ அனுமதி பெற்றது</span>
+                            <span>🌳 பார்க் ஸ்பேஸ்</span>
+                        </div>
+                        <a href="https://wa.me/918295576895?text=DTCP Plot பற்றி தகவல் வேண்டும்" target="_blank" class="property-cta">💬 WhatsApp விசாரிக்க</a>
+                    </div>
+                </div>
+
+                <div class="property-card fade-in">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&w=600" alt="வணிகம்">
+                        <span class="property-badge">விற்பனை</span>
+                    </div>
+                    <div class="property-info">
+                        <div class="property-type">வணிகம் • Shop</div>
+                        <h3 class="property-title">Main Road Shop</h3>
+                        <p class="property-price">₹1.8 கோடி</p>
+                        <p class="property-location">📍 Arni Main Road, Vellore</p>
+                        <div class="property-features">
+                            <span>📐 800 sq.ft</span>
+                            <span>🚗 2 Parking</span>
+                            <span>📍 Central Location</span>
+                        </div>
+                        <a href="https://wa.me/918295576895?text=Commercial Shop பற்றி தகவல் வேண்டும்" target="_blank" class="property-cta">💬 WhatsApp விசாரிக்க</a>
+                    </div>
+                </div>
+
+                <div class="property-card fade-in">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&w=600" alt="Villa">
+                        <span class="property-badge">பிரீமியம்</span>
+                    </div>
+                    <div class="property-info">
+                        <div class="property-type">Villa • 4 BHK</div>
+                        <h3 class="property-title">பிரீமியம் Villa</h3>
+                        <p class="property-price">₹2.9 கோடி</p>
+                        <p class="property-location">📍 VIT University அருகில், Vellore</p>
+                        <div class="property-features">
+                            <span>🛏️ 4 படுக்கைகள்</span>
+                            <span>🚿 4 Bath</span>
+                            <span>📐 2500 sq.ft</span>
+                        </div>
+                        <a href="https://wa.me/918295576895?text=Premium Villa பற்றி தகவல் வேண்டும்" target="_blank" class="property-cta">💬 WhatsApp விசாரிக்க</a>
+                    </div>
+                </div>
+
+                <div class="property-card fade-in">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&w=600" alt="Flat">
+                        <span class="property-badge">விரைவு</span>
+                    </div>
+                    <div class="property-info">
+                        <div class="property-type">Flat • 2 BHK</div>
+                        <h3 class="property-title">சரியான விலை Flat</h3>
+                        <p class="property-price">₹68 லட்சம்</p>
+                        <p class="property-location">📍 Kennathapuram, Vellore</p>
+                        <div class="property-features">
+                            <span>🛏️ 2 படுக்கைகள்</span>
+                            <span>🚿 2 Bath</span>
+                            <span>📐 1050 sq.ft</span>
+                        </div>
+                        <a href="https://wa.me/918295576895?text=2BHK Flat பற்றி தகவல் வேண்டும்" target="_blank" class="property-cta">💬 WhatsApp விசாரிக்க</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ ABOUT ═══ -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-inner">
+                <div class="about-text fade-in">
+                    <span class="section-eyebrow">✦ எங்களை பற்றி</span>
+                    <h2 class="section-title" style="text-align:left;margin-bottom:1.5rem">SRI VEL'S REAL ESTATE — <em style="color:var(--gold);font-style:normal">15 ஆண்டுகள் நம்பிக்கை</em></h2>
+                    <p>2010-ஆம் ஆண்டு தொடங்கப்பட்ட SRI VEL'S REAL ESTATE, வேலூர் மாவட்டத்தில் <strong>மிகவும் நம்பிக்கையான ரியல் எஸ்டேட் நிறுவனமாக</strong> விளங்குகிறது.</p>
+                    <p>நமது நெறிமுறை: <strong>நேர்மை, தெளிவு, வாடிக்கையாளர் மகிழ்ச்சி</strong>. ஒவ்வொரு குடும்பத்தின் கனவை நனவாக்குவதே எங்கள் இலக்கு.</p>
+                    <p>Government Medical College, VIT University, Arni Main Road — வேலூரின் முக்கிய இடங்களிலும் சொத்துக்கள் கிடைக்கின்றன.</p>
+
+                    <div class="stats-grid" style="margin-top:2rem">
+                        <div class="stat-box">
+                            <div class="stat-num">15+</div>
+                            <div class="stat-label">ஆண்டுகள் அனுபவம்</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-num">500+</div>
+                            <div class="stat-label">விற்பனைகள்</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-num">98%</div>
+                            <div class="stat-label">திருப்தி நிலை</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-num">6+</div>
+                            <div class="stat-label">சேவை வகைகள்</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual fade-in">
+                    <div class="about-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?ixlib=rb-4.0.3&w=700" alt="Real Estate Office">
+                    </div>
+                    <div class="about-card">
+                        <div class="about-card-title">🏆 Top Rated</div>
+                        <div class="about-card-sub">Vellore District — 2024</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ CONTACT ═══ -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-eyebrow">✦ தொடர்பு கொள்ளவும்</span>
+                <h2 class="section-title">இன்றே பேசுங்கள்</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="contact-inner">
+                <div class="contact-info-block fade-in">
+                    <h3>நேரடியாக தொடர்பு கொள்ளவும்</h3>
+
+                    <div class="contact-detail">
+                        <div class="contact-detail-icon">📍</div>
+                        <div class="contact-detail-text">
+                            <div class="contact-detail-label">முகவரி</div>
+                            <div class="contact-detail-value">Arni Main Road, Adukkamparai,<br>Vellore - 632057, Tamil Nadu</div>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail">
+                        <div class="contact-detail-icon">📞</div>
+                        <div class="contact-detail-text">
+                            <div class="contact-detail-label">கைப்பேசி</div>
+                            <div class="contact-detail-value">+91 82955 76895<br>+91 89031 57217</div>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail">
+                        <div class="contact-detail-icon">📧</div>
+                        <div class="contact-detail-text">
+                            <div class="contact-detail-label">மின்னஞ்சல்</div>
+                            <div class="contact-detail-value">info@srivelsrealestate.com</div>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail">
+                        <div class="contact-detail-icon">🕐</div>
+                        <div class="contact-detail-text">
+                            <div class="contact-detail-label">வேளையம்</div>
+                            <div class="contact-detail-value">காலை 9:00 – இரவு 8:00<br>எல்லா நாட்களும்</div>
+                        </div>
+                    </div>
+
+                    <div class="whatsapp-btns">
+                        <a href="https://wa.me/918295576895?text=Hi%2C%20I%20want%20property%20information%20from%20SRI%20VEL%27S%20REAL%20ESTATE" target="_blank" class="btn-whatsapp">
+                            💬 WhatsApp: 82955 76895
+                        </a>
+                        <a href="https://wa.me/918903157217?text=Hi%2C%20I%20want%20property%20information%20from%20SRI%20VEL%27S%20REAL%20ESTATE" target="_blank" class="btn-whatsapp" style="background:#128C7E">
+                            💬 WhatsApp: 89031 57217
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-form fade-in">
+                    <h3>உங்கள் தேவை சொல்லுங்கள்</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>பெயர் *</label>
+                            <input type="text" placeholder="உங்கள் பெயர்" required>
+                        </div>
+                        <div class="form-group">
+                            <label>கைப்பேசி *</label>
+                            <input type="tel" placeholder="9876543210" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>மின்னஞ்சல்</label>
+                        <input type="email" placeholder="example@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label>சொத்து வகை *</label>
+                        <select required>
+                            <option value="">தேர்ந்தெடுக்கவும்</option>
+                            <option>வாங்க வேண்டும்</option>
+                            <option>விற்க வேண்டும்</option>
+                            <option>பாட்டுக்கு தர வேண்டும்</option>
+                            <option>பாட்டுக்கு வேண்டும்</option>
+                            <option>ஆலோசனை மட்டும்</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>செய்தி *</label>
+                        <textarea placeholder="உங்கள் தேவையை விவரமாக சொல்லுங்கள்..." required></textarea>
+                    </div>
+                    <button class="btn-submit" onclick="submitForm()">அனுப்பவும் →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ MAP ═══ -->
+    <div class="map-section">
+        <div class="container">
+            <div class="map-wrap">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3914.567890123456!2d79.1234567!3d12.9165432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad4a8f8f8f8f8f%3A0x1234567890abcdef!2sAdukkamparai%2C%20Vellore%2C%20Tamil%20Nadu%20632057!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <div class="logo">🏢 SRI VEL'S REAL ESTATE</div>
+                    <p style="margin-top:1rem">வேலூர் மாவட்டத்தில் 15+ ஆண்டுகளாக நம்பிக்கையான ரியல் எஸ்டேட் சேவை. 500+ குடும்பங்களின் கனவை நனவாக்கியிருக்கிறோம்.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>சேவைகள்</h4>
+                    <ul>
+                        <li><a href="#services">வீடு விற்பனை</a></li>
+                        <li><a href="#services">நிலம் / ப்ளோட்</a></li>
+                        <li><a href="#services">அடுக்குமாடி</a></li>
+                        <li><a href="#services">வணிகச் சொத்து</a></li>
+                        <li><a href="#services">சொத்து ஆலோசனை</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>தொடர்பு</h4>
+                    <ul>
+                        <li>📞 82955 76895</li>
+                        <li>📞 89031 57217</li>
+                        <li>📍 Adukkamparai, Vellore</li>
+                        <li>🕐 காலை 9 – இரவு 8</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 SRI VEL'S REAL ESTATE. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.</span>
+                <span>Arni Main Road, Adukkamparai, Vellore - 632057</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, 80);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Mobile menu toggle
+        function toggleMenu() {
+            const links = document.querySelector('.nav-links');
+            const isOpen = links.style.display === 'flex';
+            links.style.display = isOpen ? 'none' : 'flex';
+            links.style.flexDirection = 'column';
+            links.style.position = 'absolute';
+            links.style.top = '70px';
+            links.style.left = '0';
+            links.style.right = '0';
+            links.style.background = 'rgba(13,17,23,0.98)';
+            links.style.padding = '1.5rem 5%';
+            links.style.gap = '1.2rem';
+            links.style.borderBottom = '1px solid rgba(201,168,76,0.2)';
+            if (isOpen) links.style.display = 'none';
+        }
+
+        // Form submit
+        function submitForm() {
+            alert('நன்றி! உங்கள் தகவல் பெறப்பட்டது. விரைவில் தொடர்பு கொள்கிறோம்.');
+        }
+
+        // Sticky header shadow
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 4px 30px rgba(0,0,0,0.4)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
